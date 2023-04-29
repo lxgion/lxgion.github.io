@@ -1,10 +1,5 @@
 const contractABI = [
 	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -89,35 +84,6 @@ const contractABI = [
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_subscriptionId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_subscriber",
-				"type": "address"
-			}
-		],
-		"name": "checkSubscription",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "isActive",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "expiry",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
 				"name": "_price",
 				"type": "uint256"
 			},
@@ -128,13 +94,7 @@ const contractABI = [
 			}
 		],
 		"name": "createSubscription",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
+		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -165,32 +125,6 @@ const contractABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "nextSubscriptionId",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "paymentToken",
-		"outputs": [
-			{
-				"internalType": "contract Venema",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -214,6 +148,111 @@ const contractABI = [
 		"name": "subscribe",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_subscriptionId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_subscriber",
+				"type": "address"
+			}
+		],
+		"name": "checkSubscription",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expiry",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_subscriptionId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_subscriber",
+				"type": "address"
+			}
+		],
+		"name": "getSubscriberExpiry",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "expiry",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_subscriptionId",
+				"type": "uint256"
+			}
+		],
+		"name": "getSubscription",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "period",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "active",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nextSubscriptionId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -251,6 +290,11 @@ const contractABI = [
 		"name": "subscriptions",
 		"outputs": [
 			{
+				"internalType": "address payable",
+				"name": "owner",
+				"type": "address"
+			},
+			{
 				"internalType": "uint256",
 				"name": "price",
 				"type": "uint256"
@@ -261,11 +305,6 @@ const contractABI = [
 				"type": "uint256"
 			},
 			{
-				"internalType": "address",
-				"name": "creator",
-				"type": "address"
-			},
-			{
 				"internalType": "bool",
 				"name": "active",
 				"type": "bool"
@@ -273,9 +312,22 @@ const contractABI = [
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "venema",
+		"outputs": [
+			{
+				"internalType": "contract Venema",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
-const contractAddress = '0xEbB1156b01957095748F704a66cfCE11EBa701D3';
+const contractAddress = '0x7f04274bDc73b4DB5fE92987899F8109B0e9CEc5';
 
 let web3;
 let subscriptionContract;
