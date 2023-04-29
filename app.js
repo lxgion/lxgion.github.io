@@ -151,7 +151,13 @@ const contractABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
@@ -327,7 +333,7 @@ const contractABI = [
 		"type": "function"
 	}
 ];
-const contractAddress = '0x7f04274bDc73b4DB5fE92987899F8109B0e9CEc5';
+const contractAddress = '0x23D226E9333ab3DE2F121B6145D7Cc3CE23AADCe';
 
 let web3;
 let subscriptionContract;
