@@ -333,7 +333,7 @@ const contractABI = [
 		"type": "function"
 	}
 ];
-const contractAddress = '0x23D226E9333ab3DE2F121B6145D7Cc3CE23AADCe';
+const contractAddress = '0x345533262a8C292ee0112964535dEb1311a0298b';
 
 let web3;
 let subscriptionContract;
